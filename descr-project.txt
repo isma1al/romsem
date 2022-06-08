@@ -1,0 +1,14 @@
+Данное веб-приложение (Single-page application) я реализовал сам - от вертски до полноценного функционала, без вмешательства других лиц. Тут я использовал компонентный подход, с такими технологиями как: 
+1. JavaScript
+2. React JS
+3. React Hooks
+4. Redux
+5. JSX
+6. Module CSS
+7. SCSS
+8. Webpack
+9. Mockapi ( фейковый сервер ).
+10. Git
+11. Fetch
+12. Axios
+13. React Router
