@@ -1,6 +1,13 @@
 import Card from './components/Card';
 import Drawer from './components/Drawer';
 import Header from './components/Header';
+
+const arr = [
+  { name: 'Соломон сет', descr: '1050 грамм, 30 кусочков', price: '1700' },
+  { name: 'Цезарь сет', descr: '1050 грамм, 30 кусочков', price: '1800' },
+  { name: 'Туду сет', descr: '1050 грамм, 30 кусочков', price: '1900' },
+];
+
 function App() {
   return (
     <div className="wrapper clear">
@@ -16,10 +23,9 @@ function App() {
         </div>
 
         <div className="d-flex flex-wrap justify-between">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {arr.map((obj) => (
+            <Card {...obj} />
+          ))}
         </div>
       </div>
     </div>
