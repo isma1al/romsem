@@ -1,18 +1,27 @@
+import React from 'react';
 import Card from './components/Card';
 import Drawer from './components/Drawer';
 import Header from './components/Header';
 
-const arr = [
-  { name: 'Соломон сет', descr: '1050 грамм, 30 кусочков', price: '1700' },
-  { name: 'Цезарь сет', descr: '1050 грамм, 30 кусочков', price: '1800' },
-  { name: 'Туду сет', descr: '1050 грамм, 30 кусочков', price: '1900' },
-];
-
 function App() {
+  const [cartOpened, setCartOpened] = React.useState(false);
+  const [cartItems, setCartItems] = React.useState([]);
+  const [rolls, setRolls] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('https://62a0d45da9866630f8190090.mockapi.io/items')
+      .then((res) => res.json())
+      .then((json) => setRolls(json));
+  }, []);
+
+  const onAddToCart = (obj) => {
+    setCartItems([...cartItems, obj]);
+  };
+
   return (
     <div className="wrapper clear">
-      <Drawer />
-      <Header />
+      {cartOpened && <Drawer cartItems={cartItems} onClose={() => setCartOpened(false)} />}
+      <Header onClickCart={() => setCartOpened(true)} />
       <div className="content">
         <div className="d-flex align-center justify-between mb-40">
           <h1 className="">Все роллы</h1>
@@ -22,9 +31,9 @@ function App() {
           </div>
         </div>
 
-        <div className="d-flex flex-wrap justify-between">
-          {arr.map((obj) => (
-            <Card {...obj} />
+        <div className="d-flex flex-wrap justify-between align-start">
+          {rolls.map((obj) => (
+            <Card onPlus={(obj) => onAddToCart(obj)} {...obj} />
           ))}
         </div>
       </div>
