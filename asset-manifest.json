@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/romsem/static/css/main.3505bb87.css",
-    "main.js": "/romsem/static/js/main.d9a60d43.js",
+    "main.css": "/romsem/static/css/main.8bb567e6.css",
+    "main.js": "/romsem/static/js/main.2692ae34.js",
     "index.html": "/romsem/index.html",
-    "main.3505bb87.css.map": "/romsem/static/css/main.3505bb87.css.map",
-    "main.d9a60d43.js.map": "/romsem/static/js/main.d9a60d43.js.map"
+    "main.8bb567e6.css.map": "/romsem/static/css/main.8bb567e6.css.map",
+    "main.2692ae34.js.map": "/romsem/static/js/main.2692ae34.js.map"
   },
   "entrypoints": [
-    "static/css/main.3505bb87.css",
-    "static/js/main.d9a60d43.js"
+    "static/css/main.8bb567e6.css",
+    "static/js/main.2692ae34.js"
   ]
 }
