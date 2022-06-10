@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Drawer({ onClose, cartItems }) {
+function Drawer({ onClose, cartItems, onRemoveItem }) {
+  const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
   return (
     <div className="overlay">
       <div className="drawer">
@@ -10,7 +11,7 @@ function Drawer({ onClose, cartItems }) {
         </h2>
         <div className="items">
           {cartItems.map((obj) => (
-            <div className="cartItem mb-20 d-flex align-center justify-between">
+            <div key={obj.id} className="cartItem mb-20 d-flex align-center justify-between">
               <div className="mr-20 d-flex">
                 <img className="mr-15" width={70} height={70} src={obj.imageUrl} alt="roll" />
                 <div>
@@ -18,7 +19,12 @@ function Drawer({ onClose, cartItems }) {
                   <b>{obj.price} руб.</b>
                 </div>
               </div>
-              <img className="removeBtn" src="img/remove-btn.svg" alt="roll" />
+              <img
+                onClick={() => onRemoveItem(obj.id)}
+                className="removeBtn"
+                src="img/remove-btn.svg"
+                alt="roll"
+              />
             </div>
           ))}
         </div>
@@ -27,12 +33,7 @@ function Drawer({ onClose, cartItems }) {
             <li>
               <span>Итого</span>
               <div></div>
-              <b>21 498 руб. </b>
-            </li>
-            <li>
-              <span>Налог 5%:</span>
-              <div></div>
-              <b>1074 руб. </b>
+              <b>{totalPrice} руб.</b>
             </li>
           </ul>
           <button>Оформить заказ</button>

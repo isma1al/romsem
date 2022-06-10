@@ -18,6 +18,17 @@
     }
     .button {
     cursor: pointer;
+    font-size: 18px;
+    height: 30px;
+    width: 30px;
+    line-height: 20px;
+    padding: 0;
+    border: none;
+    background-color: #ededed;
+    transition: all .3s;
+    &:hover {
+      background-color: #d9d9d9;
+    }
     }
     
   .card__footer {
