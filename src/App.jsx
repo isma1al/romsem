@@ -53,8 +53,8 @@ function App() {
       )}
       <Header cartItems={cartItems} onClickCart={() => setCartOpened(true)} />
       <div className="content">
-        <div className="d-flex align-center justify-between mb-40">
-          <h1 className="">{searchValue ? `Поиск по: ${searchValue}` : 'Все роллы'}</h1>
+        <div className="content__inner d-flex align-center justify-between mb-40">
+          <h1 className="mr-10">{searchValue ? `Поиск по: ${searchValue}` : 'Все роллы'}</h1>
           <div className="search-block mr-30">
             <img src="img/search.svg" alt="search" />
             <input
@@ -66,7 +66,7 @@ function App() {
           </div>
         </div>
 
-        <div className="d-flex flex-wrap justify-between align-start">
+        <div className="rolls__inner d-flex flex-wrap  align-start">
           {rolls
             .filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
             .map((item) => (
