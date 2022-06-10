@@ -55,7 +55,7 @@ function App() {
       <div className="content">
         <div className="content__inner d-flex align-center justify-between mb-40">
           <h1 className="mr-10">{searchValue ? `Поиск по: ${searchValue}` : 'Все роллы'}</h1>
-          <div className="search-block mr-30">
+          <div className="search-block">
             <img src="img/search.svg" alt="search" />
             <input
               value={searchValue}

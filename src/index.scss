@@ -8,6 +8,7 @@ body {
   font-family: 'Inter', system-ui;
   background-color: #ffdcbf;
   padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .logo img{
@@ -146,6 +147,10 @@ padding: 20px 20px;
   }
 }
 
+.search-block {
+  margin-right: 30px;
+}
+
 .rolls__inner {
   justify-content: space-between;
 }
@@ -162,5 +167,14 @@ padding: 20px 20px;
     justify-content: center;
     align-items: center;
     justify-content: center;
+  }
+  .search-block {
+    margin-right: 0;
+  }
+
+  body {
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
